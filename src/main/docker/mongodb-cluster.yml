@@ -1,0 +1,16 @@
+version: '2'
+services:
+    monthly_budget-mongodb:
+        image: mongo:4.0.2
+        ports:
+            - "27017:27017"
+        command: mongos --configdb monthly_budget-mongodb-config
+    monthly_budget-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    monthly_budget-mongodb-config:
+        image: mongo:4.0.2
+        container_name: monthly_budget-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db
