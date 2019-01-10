@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "income",
+            "otherEntityName": "income",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "budget"
+        },
+        {
+            "relationshipName": "outcome",
+            "otherEntityName": "outcome",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "budget"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "budget",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}
